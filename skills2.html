@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jordan De Los Reyes Sadiwa - Web Developer/ PHP Programmer</title>
+<style type="text/css">
+@font-face {
+	font-family: 'f1';
+	src: url('assets/fonts/Nitti.woff');
+}
+@font-face {
+	font-family: 'f2';
+	src: url('assets/fonts/superspitzegrotesk_semibold.woff');
+}
+
+* {
+	font-family: "f1";
+	margin: 0px;
+	padding: 0px;
+	font-weight: 300;
+	font-size: 14px;
+}
+body {
+	background: #11141a;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+p {
+    clear: both;
+    text-align: right;
+    color: #161921;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 20px;
+    min-width: 250px;
+    -webkit-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+.left {
+	float: left;
+	position: absolute;
+	/*width: 56.7%;*/
+	width: 50%;
+	height: 100%;
+	z-index: 1;
+}
+.left .box {
+	width: 100%;
+	height: 100%;
+	background: #1E232F;
+	color: white;
+	margin:auto;
+}
+
+.left:hover .box
+{
+	margin-top: 10%;
+	width: 60%;
+	height: 65%;
+    -webkit-transition: all 900ms; 
+    transition: all 900ms;
+}
+.left:hover #email-me .spans .span-container {
+	left: -100%;
+	transition: all 1s;
+}
+.left h1 {
+    background: #FFF;
+    float: right;
+    color: #161921;
+    padding: 0px 10px;
+	clear: both;
+	text-align: right;
+}
+
+.left h5 {
+	color: #fff;
+    float: right;
+	font-weight: bold;
+	text-align: right;
+	font-family: 'f2';
+	clear: both;
+}
+.left h2 {
+    font-size: 30px;
+    color: #FFF;
+	font-family: 'f2';
+	text-align: right;
+    float: right;
+	clear: both;
+    line-height: 100%;
+}
+.left #about {
+	margin-left: 20%;
+	position: relative;
+	width: 35%;
+	top: 40%;
+	padding-right: 10px;
+	float: left;
+	border-right: 3px solid white;
+	background: #1E232F;
+	z-index: 4;
+}
+.left #other {
+	float: left;
+    width: 35%;
+    right: 0px;
+	top: 38.5%;
+    left: -40px;
+    position: relative;
+	z-index: 3;
+}
+.left #other h5 {
+    font-size: 110px;
+    text-align: left;
+    float: left;
+}
+.left #email-me {
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	text-align: center;
+	z-index: 1000;
+}
+.left #email-me:hover .spans .span-container {
+	left: 0%;
+	transition: all 1s;
+}
+.left #email-me a {
+	color: white;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+	display: block;
+	font-family: 'f1';
+	text-align: center;
+}
+.left #email-me .spans {
+	width: 20%;
+	height: 5px;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+.left #email-me .spans .span-container {
+	position: absolute;
+	left: 0px;
+	width: 210%;
+	height: 11px;
+	transition: all 500ms;
+}
+.left #email-me .spans .span-container span {
+	width: 45%;
+	height: 1px;
+	margin-right: 5%;
+	display: inline;
+	float: left;
+	box-shadow: 1px 1px 10px white;
+}
+.right {
+	color: #161921;
+	z-index: 2;
+	position: absolute;
+	width: 30%;
+	/*width: 40%;*/
+	top: 0px;
+	left: 50%;
+	height: 100%;
+	background: white;
+}
+.right .box {
+	color: white!important;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.right .line {
+    position: absolute;
+    height: 113%;
+    width: 1px;
+    background: #EAEAEA;
+    -webkit-transform: translateY(-5%) translateX(236px) rotate(29deg);
+}
+.right .strips {
+    background-image: url("assets/img/strip.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 100%;
+    left: 0;
+    margin-left: -53px;
+    position: absolute;
+    width: 60px;
+    z-index: -1;
+}
+.right ul {
+	list-style-type: none;
+	float: right;
+	margin-top: 60px;
+	margin-right: 70px;
+}
+.right ul li {
+	display: inline;
+}
+.right ul li a {
+	text-decoration: none;
+	color: #161921;
+}
+.last-right {
+width: 20%;
+    left: 80%;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    background: #F9F9F9;
+    background: white;
+    border-left: 1px solid #C3C3C3;
+}
+.last-right p,
+.last-right h5,
+.last-right em,
+.last-right em {
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+    /*color: #008000;*/
+	font-size: 12px;
+}
+.last-right .activity {
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px solid #F9F9F9;
+}
+</style>
+
+</head>
+<body>
+	<div class="left">
+		<div class="box">
+			<section id="about">
+				<h1>cyborg999</h1>
+				<h5>Role:</h5>
+				<h2>Web Designer & Developer</h2>
+			</section>
+			<section id="other">
+				<h5>01</h5>
+			</section>
+		</div>
+		<div id="email-me">
+			<a href="mailto:sadiwajordan@yahoo.com">Email me!</a>
+			<div class="spans">
+				<div class="span-container">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="box">
+			<span class="line"></span>
+		</div>
+		<div class="strips"></div>
+		<ul>
+			<li>
+				<a href="">Github / </a>
+			</li>
+			<li>
+				<a href="">Facebook</a>
+			</li>
+		</ul>
+		<style type="text/css">
+		.right .left-nav {
+			float: left;
+			top: 100px;
+			position: relative;
+			width: 1%;
+			left: 0px;
+		}
+		.right .right-nav {
+			position: relative;
+			left: 1%;
+			width: 90%;
+			height: 300%;
+			margin-top: 100px;
+		}
+		.right .left-nav ul {
+		    position: absolute;
+		    left: -320px;
+		    top: 200px;
+		    text-align: center;
+		    width: 600px;
+		    list-style-type: none;
+		    -webkit-transform: rotate(-90deg);
+		    -moz-transform: rotate(-90deg);
+		    -ms-transform: rotate(-90deg);
+		    -o-transform: rotate(-90deg);
+		    transform: rotate(-90deg);
+		    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		}
+		.right .left-nav ul li {
+			display: inline;
+			margin-right: 40px;
+		}
+		.right .left-nav ul li.active a {
+			color: black;
+		}
+		.right .left-nav ul li a {
+			color:#999;
+		    left: 9px;
+		    size: 12px;
+		}
+		</style>
+		<article class="left-nav">
+			<ul id="nav">
+				<li>
+					<a href="" data-target="-180%">Employement History</a>
+				</li>
+				<li>
+					<a href="" data-target="-89%">Skills</a>
+				</li>
+				<li class="active">
+					<a href="" data-target="0%">Personal</a>
+				</li>
+			</ul>
+		</article>
+		<style type="text/css">
+		.scroll-box {
+		    position: relative;
+		    left: 0;
+		    height: 250px;
+		    width: 100%;
+		    z-index: 998;
+		    height: 25%;
+		    overflow: hidden;
+		    border: 1px solid #F1F1F1;
+		    padding: 5px;
+		    background: rgba(247, 247, 247, 0.98);
+		    margin-bottom: 25%;
+				}
+				span.active {
+					font-size: 30px!important;
+					color: black!important;
+					z-index: 999;
+				}
+				#timeline .cover {
+					position: relative;
+					margin-top: 10px;
+					height: 200px;
+					width: 100%;
+					background: black;
+					background-image: url(assets/img/m4.jpg);
+					background-size: 100% 100%;
+				}
+				#timeline .cover .dp {
+					text-align: center;
+					position: relative;
+					top: 40%;
+				}
+				#timeline .cover .dp img {
+					width: 180px;
+					height: 180px;
+					border-radius: 100px;
+					-webkit-border-radius: 100px;
+					-moz-border-radius: 100px;
+					border: 7px solid white;
+				}
+				#timeline .cover ul {
+				    margin: 0px;
+				    background: rgba(0,0,0,.8);
+				    width: 25px;
+				    right: 0px;
+				    top: 0px;
+				    position: absolute;
+				    list-style-type: none;
+				    text-align: center;
+				    padding: 10px;
+				}
+				#timeline .cover ul li img {
+					width: 25px;
+					height: 25px;
+				}
+				.right-nav .description {
+					margin-top: 95px;
+				}
+				.right-nav .description h5 {
+		    font-size: 12px;
+		    color: #FFF;
+		    font-weight: 300;
+		    background: #161921;
+		    padding: 2px 5px;
+		    display: inline-block;
+		    float: right;
+		    margin-bottom: 10px;
+				}
+				.right-nav .description em {
+					font-weight: bold;
+					font-size: 15px;
+					font-family: 'f2';
+				}
+		</style>
+		<article class="right-nav">
+			<div id="timeline" class="scroll-box">
+				<div class="cover">
+				
+					<div class="dp">
+						<img src="assets/img/me2.jpg">
+						<div class="desc">
+						
+						</div>
+					</div>
+						<ul>
+							<li>
+								<a href=""><img src="assets/img/facebook-128.png"></a>
+							</li>
+							<li>
+								<a href=""><img src="assets/img/twitter1-128.png"></a>
+							</li>
+							<li>
+								<a href=""><img src="assets/img/github-128.png"></a>
+							</li>
+							<li>
+								<a href=""><img src="assets/img/google-128.png"></a>
+							</li>
+							<li>
+								<a href=""><img src="assets/img/skype-128.png"></a>
+							</li>
+						</ul>
+				</div>
+		
+				<div class="description">
+					<h5>Personal Information</h5>
+					<p>Lorem ipsum dolor <em>sit amet</em>, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt</p><p> ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+					<!-- <p>Hello, I'm <em>Dan</em>. If you are viewing this page, then that means Im broke af and needs a job badly. If you like my work, feel free to drop me an email.</p> -->
+				</div>
+			</div>
+			<div id="skills"  class="scroll-box">
+				skills goes here [TODO]
+				<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+			</div>
+			<div id="employment_history" class="scroll-box">
+				employment history goes here [TODO]
+			</div>
+		</article>
+	</div>
+	<div class="last-right">
+	<!-- 	<div class="activity">
+			<p>type</p>
+			<h5>actor.login</h5>
+			<em>repo.name</em>
+			<a href="">repo.url</a>
+			<p>"payload.commits.message"</p>
+			<p>createdat</p>
+		</div> -->
+			
+			<p style="position:fixed;bottom:0px;padding:20px;">git commits goes here [TODO]</p>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript">
+		(function($){
+			var Page = {
+				__init 	: function(){
+					this.__listen();
+				},
+				__listen : function(){
+					var nav = $("#nav li");
+
+					nav.find("a").on("click", function(e){
+						e.preventDefault();
+						var me = $(this);
+						var top = me.data("target");
+
+						nav.removeClass("active");
+						me.parents("li").addClass("active");
+
+						$(".right-nav").stop().animate({
+							"top" 	: top
+						});
+					});
+				}
+			}
+
+			$(document).ready(function(){
+				Page.__init();
+			});
+		})(jQuery);
+
+	</script>
+</body>
+</html>

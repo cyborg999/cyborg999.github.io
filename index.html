@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Jordan Sadiwa Jordan De Los Reyes Sadiwa Marinduque Programmer PHP Programmer Web Developer Website Developer HTML CSS Front End Developer Best Dota Player Most Punctual Employee">
+	<title>Jordan Sadiwa</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<!-- 
+	More SEO Tips Here
+	 -->
+	<meta property="og:url"           content="http://jordansadiwa.com" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Jordan Sadiwa Jordan De los Reyes Sadiwa PHP Programmer Web Developer Website Developer HTML CSS Front End Developer Best Dota Player Most Punctual Employee" />
+	<meta property="og:description"   content="Jordan Sadiwa Porfolio" />
+	<meta property="og:image"         content="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash2/v/t1.0-9/431949_3061439555573_1699217596_n.jpg?oh=359bb3873de62aae49a12097fb56f25e&oe=5757D72F&__gda__=1468771985_189f1c6b2d67d49c5f73664409243b3c" />
+	<!--[if lt IE 9]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav>
+		<a data-target="#all" class="not nav-active" href="home.html">Home</a> |
+		<a data-target="#home" href="home.html">Github Repo</a> |
+		<a data-target="#design" href="design.html">Design</a> |
+		<a data-target="#about" href="about.html">About</a> 
+	</nav>
+	<article id="main">
+		<section style="">
+			<header>
+				<h1 itemprop="headline">HELLO, I am  Name Goes Here.</h1>
+				<div class="intro">
+					<p> I'm a designer, developer, and technologist  focused on providing meaningful data and enjoyable software experiences to users. I am currently working at IBM Design within the cybersecurity portfolio in Austin, Texas. 
+If you have any questions or have something in mind for discussion, please don't hesitate to contact me.</p>
+					<div id="fbgroup">
+						<iframe frameborder="0" src="fbpage_like.html"></iframe>
+					</div>
+				</div>
+			</header>
+		</section>
+	</article>
+	<section  id="articles">
+		<span id="parent-article">
+			<article class="container active" id="about">
+				<main class="clear" style="height:360px;">
+					<iframe class="about" frameborder="0" scrolling="no" src="skills2.html"></iframe>
+				</main>
+			</article>
+			<article class="container" id="design">
+				<main class="clear">
+					<article class="left" data-href="designs/design1.html">
+						<figure>
+						  <img src="designs/design1.png" alt="The Pulpit Rock">
+						  <!-- <figcaption>Design #1 - 6/16/2016</figcaption> -->
+						</figure>
+					</article>
+				</main>
+			</article>
+			<article class="container" id="home">
+				<main class="clear">
+				</main>
+			</article>
+		</span>
+	</section>
+	<footer class="clear">
+		<span class="toggle-me">Feedback</span>
+		<p>
+			<i class="fa fa-cog fa-spin"></i>
+		</p>
+	</footer>
+	<div id="preview_page">
+		<a href="" id="close-preview">close preview</a>
+		<ul id="responsive">
+			<li><img data-width="1224px" data-height="768px" src="assets/img/screen.png" alt="screen"/></li>
+			<li><img data-width="1024px" data-height="768px" src="assets/img/ipad.png" alt="tab"/></li>
+			<li><img data-width="320px" data-height="480px"  src="assets/img/phone.png" alt="phone"/></li>
+		</ul>
+	</div>
+	<div id="modal" class="hidden">
+		<div class="left-preview left">
+		<div class="img-container">
+			<img src="assets/img/design3.png">
+			<p>
+				<i  id="preloader" class="fa fa-cog fa-spin"></i>
+			</p>
+		</div>
+			
+		</div>
+		<div class="right-content left">
+			<div class="">
+				<a href="" class="after-this">
+					<i class="fa fa-close"></i>
+				</a>
+			</div>
+			<div class="clear description">
+				<h2></h2>
+				<a href="" class="git-clone"></a>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<!-- 
+		TODO: 
+		* it's something meme preloader
+		* cache js,css,img
+	 -->
+	 <script type="text/html" id="article-data">
+	 	<article class="left" data-gitclone="[GITCLONE]">
+			<header>
+				<h4>[TITLE]</h4>
+			</header>
+			<figure>
+			  <img data-big="[PREVIEWBIG]" data-small="[PREVIEWSMALL]" src="[PREVIEW]" alt="[TITLE]">
+			  <figcaption><span>[LANG]</span></figcaption>
+			</figure>
+		 	
+		  	<p>[DESCRIPTION]</p>
+		</article>
+	 </script>
+ 	<script type="text/html" id="preview-article">
+ 		<div class="cover">
+	 		<p>
+				<i class="fa fa-search [PREVIEW]"></i>
+	 		</p>
+		</div>
+ 	</script>
+	<script type="text/html" id="mover">
+		<span class="mover" data-target="[TARGET]" data-zindex="[ZINDEX]" style="left:[LEFT];">
+			<label>[LABEL]</label>
+			<i class="fa fa-arrows-h"></i>
+		</span>
+	</script>
+<script type="text/javascript" src="assets/js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script>
+	(function($){
+		function Mover(ele, percent, px){
+			this.ele 		= ele;
+			this.percent 	= percent;
+			this.px 		= px;
+		}
+
+		Mover.prototype = {
+			constructor 	: Mover,
+			hideArticle 	: function(zIndex){
+				var percent = (this.px != null) ? this.px + "px" : this.percent;
+
+				if(zIndex != null){
+					if(zIndex == "1003"){
+						// percent = "55%";
+						$(this.ele).stop().animate({
+							"left" 		: percent,
+							"zIndex"  	: zIndex
+						});
+						$(this.ele).find("main").first().stop().animate({
+							"left" 		: "0px",
+							"zIndex"  	: zIndex,
+							"width" 	: "100%",
+							"height" 	: "100%"
+						});
+					} else {
+						$(this.ele).stop().animate({
+							"left" 		: percent,
+							"zIndex"  	: zIndex
+						});
+					}
+
+					$(".mover[data-target='" + this.ele + "']").stop().animate({
+						"left" 	: percent,
+						"zIndex"  	: zIndex
+					});
+					console.log(percent);
+				} else {
+					$(this.ele).stop().animate({
+						"left" 	: percent
+					});
+
+					$(".mover[data-target='" + this.ele + "']").stop().animate({
+						"left" 	: percent
+					});
+				}
+			}
+		}
+
+		var Page = {
+			delayModal 		 : false,
+			lastIdx 		 : 1000,
+			defaultPosition  : Array(),
+			__init 			 : function(){
+				this.__listen();
+			},
+			__responsive 	: function(){
+				var media = $("#responsive img");
+
+				media.on("click", function(){
+					var me = $(this);
+					var target = $("#preview_page iframe ");
+					var w = me.data("width");
+					var h = me.data("height");
+
+					target.stop().animate({
+						"height" 	: h,
+						"width"		: w
+					});
+				});
+			},
+			__listen 		 : function(){
+				var me = this;
+
+				me.generateDragging($("nav").first().find("a"));
+				me.viewArticle($("nav").first().find("a"));
+				// me.fixedHeader($("nav").first(), $("#main"), $("#articles"));
+				me.defaultView();
+				// me.showAbout();
+				me.getRepo();
+				me.__responsive();
+
+				//default
+
+				$(window).resize(function(){
+					me.generateDragging($("nav").first().find("a"));
+				});
+
+
+				$("#close-preview").on("click", function(e){
+					e.preventDefault();
+
+					$("#preview_page iframe").remove();
+					$("#preview_page").fadeOut();
+				});
+
+				$("#modal .fa-close").on("click", function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					$("#modal").fadeOut("slow", "easeOutBack", function(){
+						$("body").removeClass("fixed-body");
+					});
+				});	
+
+				$("#modal").on("click", function(e){
+					e.stopPropagation();
+
+					if(e.target == e.currentTarget) {
+						$("#modal .fa-close").trigger("click");
+    				}
+				});
+
+				$(".toggle-me").on("click", function(){
+					var footer = $("footer").first();
+					var iframe = footer.find("iframe");
+
+					if(footer.hasClass("footer-show")){
+						footer.stop().animate({
+							"bottom" 	: "-82%"
+						});
+
+						footer.removeClass("footer-show");
+					} else {
+						footer.stop().animate({
+							"bottom" 	: "0%"
+						});
+
+						footer.addClass("footer-show");
+					}
+
+					if(iframe.length == 0){
+						footer.find("p").first().after('<iframe src="fbcomment.html" class="feedback loaded" frameborder="0"></iframe>');
+
+						iframe = footer.find("iframe");
+						iframe.on("load", function(){
+							footer.find("p").addClass("hidden");
+						});
+					}
+				});
+			},
+			__defaultListener : function(){
+				var that = this;
+
+				$("article.container article").off().hover(function(){
+					var content = $("#preview-article").html();
+					var articleName = $(this).parents(".container").attr("id");
+					
+					if(articleName == "design"){
+						content = content.replace("[PREVIEW]", "preview-page");
+					}
+
+					$(".cover").first().remove();
+					$(this).find("img").first().before(content);
+					$(".cover").hide().fadeIn("slow");	
+
+					that.__defaultListener();
+				}, function(){
+					$(".cover").first().remove();
+				});
+
+				$(".box").off().on("click", function(e){
+					e.preventDefault();
+
+					var me 			= $(this);
+					var filename 	= me.find("img").first().attr("src");
+
+					$("#modal .active").removeClass("active");
+
+					me.addClass("active");
+
+					var target 		= $(".img-container img").first();
+					var preloader 	= $("#preloader");
+
+					target.addClass("hidden");
+					that.__preload(target,preloader,filename);
+				});
+
+				$(".cover").off().on("click", function(){
+					var me 		= $(this);
+					var target 	= me.parents("article.container");
+
+					if(target.hasClass("active") == false){
+						$("nav a[data-target='#" + target.attr("id") + "'").trigger("click");
+
+						that.delayModal = true;
+					} else {
+						var previewArticle = $(this).find(".preview-page").length;
+
+						if(previewArticle == 1){
+							var url = me.parents("article.left").data("href");
+							$("#preview_page").append("<iframe src='" + url + "'></iframe>");
+							$("#preview_page").hide().fadeIn();
+
+						} else {
+							var article 	= me.parents("article.left");
+							var name 		= article.find("h4").first().html();
+							var desc 		= article.find("p").last().html();
+							var img  		= article.find("img").first();
+							var preview 	= img.data("big");
+							var thumb 		= img.data("small");
+							var modal 		= $("#modal");
+							var target 		= $(".after-this");
+
+							thumb = thumb.split(";");
+							modal.find(".box").remove();
+
+							for(var i in thumb){
+								var small = $('<div class="box left active"> <img src="' + thumb[i] + '"> </div>');
+
+								target.append(small);
+							}
+							
+							that.__defaultListener();
+
+							// modal.find(".left-preview img").attr("src", preview);
+							modal.find(".right-content h2").html(name);
+							modal.find(".right-content p").html(desc);
+							modal.find(".right-content p").html(desc);
+							modal.find(".right-content a.git-clone").html(article.data("gitclone"));
+							modal.find(".active").removeClass("active");
+
+							that.__preload(modal.find(".left-preview img"),$("#preloader"),preview);
+							that.showModal();
+						}
+					}
+				});
+			},
+			__preload 		  : function(target, preloader, filename){
+				var image = new Image();
+
+				image.onload = function () {
+					console.info("Image loaded !");
+					//do something...
+					preloader.fadeOut("slow");
+					target.removeClass("hidden");
+					target.attr("src", image.src);
+				}
+
+				image.onerror = function () {
+				   console.error("Cannot load image");
+				}
+
+				image.src = filename;
+			},
+			getRepo 		 : function (){
+				var that 		= this;
+				var target 		= $("#home main");
+				var url 		= "https://api.github.com/users/cyborg999/repos";
+				var projects 	= {
+								"52413156" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/12801226_932969806800945_689283708897671530_n.jpg?oh=8210ab293d771fac1ee4632a2783dbe7&oe=57987A0E",
+									thumbnails : [
+										{
+											"page" : "Services",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/12923137_932968266801099_144331163660398448_n.png?oh=0f4625161d172d746169a7a01e952e63&oe=57923103"
+										},
+										{
+											"page" : "Homepage",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/12494780_932968366801089_737640289549315359_n.jpg?oh=22b670be0b1f85447a8007968960d09f&oe=577D912E"
+										},
+										{
+											"page" : "Lineman Schedule",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/12933164_932968260134433_5364814204434916301_n.png?oh=5088bd287aee94b5b4f0c7098adea3d9&oe=5786A812"
+										},
+										{
+											"page" : "Report",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12670806_932968283467764_3537103949684182646_n.png?oh=1b6fdbac543d980fd1e07d6b4fddae02&oe=5772ADE2"
+										},
+										{
+											"page" : "Scheduling",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12936707_932968280134431_891543419886575328_n.png?oh=80763f7d919c407bd1358bcfc6c6748c&oe=5782FCFA"
+										},
+										{
+											"page" : "Services Available",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/12801633_932968296801096_7316674886177804933_n.png?oh=fa8033205bf3d6e8281c86e5e876c885&oe=5785BD6C"
+										},
+										{
+											"page" : "Setting",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/1477362_932968363467756_6051130023497335228_n.png?oh=55b5bf490708a8d6e806fd6ca2fb5279&oe=57897C2C"
+										},
+										{
+											"page" : "Supply",
+											"link" : "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/1690004_932968303467762_7944512524887241712_n.png?oh=f5a6e078464ec7cca37801e29f491516&oe=5780B2FC&__gda__=1468214721_7db1ddc5b53769053b2d7abbad080c1a"
+										},
+										{
+											"page" : "System User",
+											"link" : "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/12933098_932968333467759_2835843146319174433_n.png?oh=3530f76192116a9e282a313ae795661b&oe=57861BEA&__gda__=1468372444_d1ffe0caf3d670e464bac8d5f1ca4a7b"
+										}
+									]
+								},
+								"52414620" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtl1/v/t1.0-9/12670814_933664513398141_3769898032038575081_n.png?oh=6bad2128ce0831c88a54772a387d62a3&oe=577EF698",
+									thumbnails : [
+										{
+											"page" : "Register",
+											"link" : "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/12495071_933664446731481_2259195859318577258_n.png?oh=adc07f2c16a597723dbd59e3b36e9b31&oe=577C0F87&__gda__=1467310513_f729fe2102f64f1c4f2e3375988bc6b7"
+										},
+										{
+											"page" : "Schedule",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/12832571_933664493398143_118699136186705262_n.png?oh=371e2a8bbac5080e0b51fad250083d0f&oe=578BDB69"
+										},
+										{
+											"page" : "New Service",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xla1/v/t1.0-9/12920355_933664516731474_2713271634430990347_n.png?oh=93c21705196bdea1c8743626fa572339&oe=577B71B1"
+										},
+										{
+											"page" : "System Setting",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/12592273_933664530064806_2203288241911246430_n.png?oh=fb6cf4d4c8510cb85f2c69035e2f2dcb&oe=577E6963"
+										},
+										{
+											"page" : "Applicant",
+											"link" : "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/12107034_933664536731472_1312934077739324646_n.png?oh=2eb8177237aa63820c597b0634a4526d&oe=579305DC&__gda__=1468522730_3278d9acf27ac22844a5d133d0b216f8"
+										},
+										{
+											"page" : "Add Slideshow",
+											"link" : "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xlp1/v/t1.0-9/12801543_933664403398152_3068569966403808097_n.png?oh=9023cf1e21612ccbfdc0d2ccdf0f5ef0&oe=57734273&__gda__=1467116385_fb0135ed62f4268269481907211ba1ac"
+										},
+										{
+											"page" : "Slideshow",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12923239_933664500064809_6664060977941248581_n.png?oh=18abc33b6a7a6fed26c53bf02323211d&oe=57939467"
+										},
+										{
+											"page" : "Current Schedule",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/12938219_933664410064818_247109274141069108_n.png?oh=a6b6e9c142195c1b53372b7a32fbfbf6&oe=5784C32C"
+										},
+										{
+											"page" : "Login",
+											"link" : "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/12931073_933664420064817_5287512681134004711_n.png?oh=8a1faea5aa6d2e88e8eaaced1c76c490&oe=57798908&__gda__=1468332247_483a1391fc70d443a6a67a28593487de"
+										},
+										{
+											"page" : "News",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1947613_933664426731483_8849185017281701376_n.png?oh=63bb9860581be184785cbe413309a8fe&oe=5778657C"
+										}
+									]
+								},
+								"55026997" : {
+									preview : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/12933119_933657016732224_4493557889757369584_n.jpg?oh=43892aff7dd74d584eacfa56e9070e00&oe=577ABAE4&__gda__=1468271419_8f6c10991726cadcd924a024b7e42e39",
+									thumbnails : [
+										{
+											"page" : "Game Preview",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1919347_933657003398892_701195925270449666_n.jpg?oh=5f9153b70e66b3e1d41cdc36f3555916&oe=5780D785"
+										},
+										{
+											"page" : "Game Preview",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtl1/v/t1.0-9/12063853_933657010065558_709504876384079737_n.jpg?oh=5b114d7435ead6e3d8774021af60f823&oe=578C2B17"
+										},
+										{
+											"page" : "Add New Slideshow",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/12439462_933655926732333_8328095455428455794_n.png?oh=7ee7d5a7a23ebfbd9521513754b65b4c&oe=5789B373"
+										},
+										{
+											"page" : "All Advance Lesson",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xlp1/v/t1.0-9/6161_933655956732330_7589638405896289384_n.png?oh=13c6de419cb8664687b2f733137b70bd&oe=577B8199"
+										},
+										{
+											"page" : "All Student",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/12494783_933655920065667_762885853438442100_n.png?oh=1434bee7f97aa1bce272145968fcf093&oe=5785BD00"
+										},
+										{
+											"page" : "Dashboard",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12439461_933655966732329_5871459802634439571_n.png?oh=5b219ba6e5dd741791f2eb39bf79fecb&oe=5783F5E6"
+										},
+										{
+											"page" : "Slideshow",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/10686785_933655980065661_3381531559812567795_n.png?oh=9d54104aa014498a108dcd593e2fd681&oe=5796DA77"
+										},
+										{
+											"page" : "User Dashboard",
+											"link" : "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/12928405_933656003398992_133031880055600376_n.png?oh=8086bfc5ddb6608e9e3ff0402e1eecb0&oe=57983B2B&__gda__=1468674270_7ba65620e66abce28aa241a5ddf20209"
+										},
+										{
+											"page" : "Login",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/12936691_933655986732327_3598775808606939242_n.png?oh=da533dd20b6d3d0d8c6515b2bf2852e2&oe=57C0C4F6"
+										},
+										{
+											"page" : "Homepage",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12494794_933656090065650_7884582570816193274_n.jpg?oh=db9d63e6915a1236a075e9fc0e91e53a&oe=5791DD91"
+										},
+										{
+											"page" : "Game Preview",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12472841_933656093398983_7043649429897865575_n.png?oh=fc40ca0b412e624d9fc9891281d429b8&oe=57817139"
+										},
+										{
+											"page" : "Homepage",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12494794_933656090065650_7884582570816193274_n.jpg?oh=db9d63e6915a1236a075e9fc0e91e53a&oe=5791DD91"
+										}
+									]
+								},
+								"55028781" : {
+									preview : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xal1/v/t1.0-9/12670739_933740256723900_6506452615594822503_n.png?oh=8fea2d0574291989c94de5d65774ce4e&oe=57877691&__gda__=1468414150_4165ea88588613b0c3022269fec726aa",
+									thumbnails : []
+								},
+								"55037606" : {
+									preview : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/12801542_933633270067932_8707243124488021347_n.jpg?oh=d40eb0ab1610322c22bc6177063e4030&oe=578E66D4&__gda__=1469530850_240b5145a914bf5b20e0074cb879d543",
+									thumbnails : [
+										{
+											"page" : "Leistungen",
+											"link" : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/993563_933633263401266_7754565569394973329_n.jpg?oh=b70c52321ef7d34063e287ed1472cef9&oe=5787BE13&__gda__=1469397656_0a3bab6ca9a0486739cdeabbf335af0b"
+										},
+										{
+											"page" : "Aktuelles",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/12923156_933633266734599_3999113943857291309_n.jpg?oh=25a7d515b477dc3e19cfde9b75b8464a&oe=57770437"
+										},
+										{
+											"page" : "Kotakt",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/12592589_933633383401254_7806326794324572617_n.jpg?oh=4d198a59c0244742c7164e50fbf8e29e&oe=577BB601"
+										},
+										{
+											"page" : "Homepage",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/s960x960/12525089_933633416734584_621003425335679617_o.jpg"
+										},
+										{
+											"page" : "Private",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12524376_933633406734585_3994167083712263828_n.jpg?oh=26d52695a554917809348aa29dd4492c&oe=5777D421"
+										}
+									]
+								},
+								"55037666" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821",
+									thumbnails : [
+										{
+											"page" : "Summary",
+											"link" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfl1/v/t1.0-9/12931025_933634133401179_8279888773663692384_n.png?oh=93336c58dc2c762e88b8034a142a968d&oe=57913372&__gda__=1467733104_890683c8ea46902f2951d6103d33a9e3"
+										},
+										{
+											"page" : "Authentication",
+											"link" : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/12494849_933634126734513_7986625188463987540_n.png?oh=e408a5d4b79f06f689f36db089c234b9&oe=578BB409&__gda__=1467655181_72abbdda6790667933a637534494f11e"
+										},
+										{
+											"page" : "Search Page",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821"
+										}
+									]
+								},
+								"55037639" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12933038_933633973401195_9080244177169982950_n.png?oh=5a286a2bbc13a4b899221b4e35f62312&oe=577B59BB",
+									thumbnails : [
+										{
+											"page" : "Add Project",
+											"link" : "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xtf1/v/t1.0-9/12932657_933633963401196_2329723986487822103_n.png?oh=a6951945c8b6c6cf32237a26b14d2021&oe=577DCA81&__gda__=1469437658_39b80a1fb62dccd7139476e50c4a5e7c"
+										},
+										{
+											"page" : "Position",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/12417871_933633980067861_4224377946008836097_n.png?oh=4d1b72414e49bb327684657e764652e3&oe=578B232A"
+										},
+										{
+											"page" : "Project",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12933038_933633973401195_9080244177169982950_n.png?oh=5a286a2bbc13a4b899221b4e35f62312&oe=577B59BB"
+										}
+									]
+								},
+								"55037628" : {
+									preview : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/12932713_933632513401341_2274825957664480220_n.png?oh=aa10a6b924eb0788d30caa4905b14367&oe=577726CB&__gda__=1468644218_1f191bd5c0fb322987cddfd06efdc728",
+									thumbnails : [
+										{
+											"page" : "Main Page",
+											"link" : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/12932713_933632513401341_2274825957664480220_n.png?oh=aa10a6b924eb0788d30caa4905b14367&oe=577726CB&__gda__=1468644218_1f191bd5c0fb322987cddfd06efdc728"
+										},
+										{
+											"page" : "Aktuell",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/12920405_933632586734667_530764464325854531_n.png?oh=4d50d37cdc8e085055b9fb5f28e3b64e&oe=577FEA25"
+										},
+										{
+											"page" : "Daskino",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11074722_933632553401337_3691350441322885466_n.png?oh=de191cb21caa5d2f51e2051c5314d1fb&oe=57825CD2"
+										},
+										{
+											"page" : "Services",
+											"link" : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/12931010_933632703401322_7236867315943558709_n.jpg?oh=0a53fd31d3389bce245e017d0de9eae9&oe=578EDA7E&__gda__=1468970146_3402691ce6610ae421b085aaccffd1b4"
+										}
+									]
+								},
+								"55037690" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xlp1/v/t1.0-9/12923107_933635433401049_8959652416711252843_n.png?oh=a4b0885ac19311c1da6a8f480c89efbc&oe=5776B21E",
+									thumbnails : [
+										{
+											"page" : "M1M4",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xlp1/v/t1.0-9/12923107_933635433401049_8959652416711252843_n.png?oh=a4b0885ac19311c1da6a8f480c89efbc&oe=5776B21E"
+										},
+										{
+											"page" : "Rapport",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/12321527_933635440067715_4636416399038349757_n.png?oh=fe7a5bbd61c6f43e3fae4c55491e9e8c&oe=5779B184"
+										},
+										{
+											"page" : "Rapport Add",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/12938094_933635460067713_1149770680305758564_n.png?oh=ba5f32f1fc479e9f5783bcb847a5b78b&oe=57864609"
+										},
+										{
+											"page" : "AMk Registration",
+											"link" : "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/s960x960/10623675_933635436734382_2519448778689389366_o.png"
+										}
+									]
+								}
+							};
+
+				$.ajax({
+					url 	: url,
+					type 	: 'GET',
+					dataType 	: 'JSON',
+					cache 		: true,
+					success 	: function(response){
+						for(var i in response){
+							if(projects[response[i].id] != null){
+								var small 		= Array();
+								var tpl 		= $("#article-data").html();
+								var lang 		= (response[i].language == null) ? "HTML</span><span>CSS</span><span>JS" : response[i].language;
+								var name 		= response[i].name.replace(/-/g, " ");
+								var thumbnails 	= projects[response[i].id]['thumbnails'];
+
+								for(var x in thumbnails){
+									if(thumbnails[x]["link"] != null){
+										small.push(thumbnails[x]["link"]);
+									}
+								}
+
+								small 	= small.join(";");
+								tpl 	= tpl.replace("[TITLE]", name).
+											replace("[TITLE]", name).
+											replace("[PREVIEWBIG]", projects[response[i].id].preview).
+											replace("[PREVIEWSMALL]", small).
+											replace("[GITCLONE]", response[i].clone_url).
+											replace("[PREVIEW]", projects[response[i].id].preview).
+											replace("[LANG]", lang).
+											replace("[DESCRIPTION]", response[i].description);
+
+								target.append(tpl);
+							} 
+						}
+						
+						that.__defaultListener();
+
+					},
+					error 		: function(){
+						console.log("err");
+					}
+				});
+			},
+			showModal 		 : function (){
+				$("body").addClass("fixed-body");
+				$("#modal").hide().removeClass("hidden").fadeIn("slow");
+			},
+			fbPage 			 : function(){
+				var ifrm = '<iframe src="fbpage_like.html" frameborder="0"></iframe>';
+
+				$("#fbgroup").append(ifrm);
+			},
+			showAbout 		 : function(){
+				$(".ido").typed({
+	                strings: ["'m gonna be the very best, like no one ever was.","do Web Design", "do Web Development","like CM with Vanguard and Blade Mail", "am Maaga pumasok!", "need a job,MERCY PLS!!!","'m a Full Stack Web Developer"],
+	                typeSpeed: 20,
+	                startDelay: 80,
+	                backSpeed: 0,
+	                backDelay: 2000,
+	                loop: false,
+	                callback: function() {},
+	                preStringTyped: function() {},
+	                onStringTyped: function() {},
+	                resetCallback: function() {}
+	            });
+			},
+			defaultView 	 : function (){
+				var that = this;
+
+				$("nav a").not(".not").each(function(){
+					var me 		= $(this);
+					var target 	= me.data("target");
+					var mover 	= $("#articles .mover[data-target='" + target + "']").first();
+					var idx 	= mover.data("zindex");
+
+					that.defaultPosition.push(Array(target, mover.offset().left, idx));
+				});
+
+				$(".not").first().on("click", function(e){
+					e.preventDefault();
+
+					var me 		= $(this);
+					var target 	= me.data("target");
+					var mover 	= $("#articles .mover[data-target='" + target + "']").first();
+
+					$(".nav-active").removeClass("nav-active");
+					$("#articles .active").removeClass("active");
+					$("#articles label").css("backgroundColor", "#656565");
+
+					me.addClass("nav-active");
+
+					var defaultPos = that.defaultPosition;
+
+					for(var i in defaultPos){
+						var article = defaultPos[i][0];
+						var left 	= defaultPos[i][1];
+						var idx 	= defaultPos[i][2];
+						var mover 	= new Mover(article,0,left);
+
+						console.log(idx);
+						mover.hideArticle(idx);
+					}
+				});
+			},
+			fixedHeader 	 : function(ele,ele2, adjusted){
+				$(window).scroll(function(){
+					var top = $(this).scrollTop();
+
+					if(top > 100){
+						ele.addClass("fixed").show();
+						ele2.addClass("fixed2");
+						adjusted.addClass("adjust");
+					} else {
+						ele.removeClass("fixed").fadeIn();
+						ele2.removeClass("fixed2");
+						adjusted.removeClass("adjust");
+					}
+				});
+			},
+			viewArticle  	 : function (eles){
+				var that 	= this;
+				eles.not(".not").on("click", function(e){
+					e.preventDefault();
+
+					var me 		= $(this);
+					var target 	= me.data("target");
+					var mover 	= $("#articles .mover[data-target='" + target + "']").first();
+					var fixed 	= me.parents("nav").first();
+
+					if(fixed.hasClass("fixed") == true){
+						var top = $("#articles");
+
+						$("html,body").animate({ scrollTop: 130 }, 1000,"easeOutElastic", function(){
+							// that.showModal();
+						});
+					}
+
+					$(".nav-active").removeClass("nav-active");
+					$("#articles .active").removeClass("active");
+					$("#articles label").css("backgroundColor", "#656565");
+
+					me.addClass("nav-active");
+					mover.find("label").first().css("backgroundColor", "#3737FD");
+
+					$(target).addClass("active");
+
+					if(target == "#about"){
+						$("#about").find("iframe").attr("src","skills2.html");
+						// alert("done");
+					}
+					that.moveArticle(target, mover);
+				});	
+			},
+			moveArticle 	 : function (article,mover){
+				var me = this;
+
+				$(article).stop().animate({
+					"left" 		: "20px",
+					"zIndex" 	: ++me.lastIdx
+				});
+
+				mover.stop().animate({
+					"left" 		: "20px",
+					"zIndex" 	: ++this.lastIdx
+				});
+
+				var counter = 0;
+				$("#parent-article .container").not(article).each(function(x){
+					var id 		= $(this).attr("id");
+					var done 	= false;
+
+					++counter;
+
+					var percent = (100 - (counter * 5)) + "%";
+					var mover 	= new Mover("#"+id, percent);
+
+					mover.hideArticle();
+				});
+			},
+			generateDragging : function(eles){
+				var that 		= this;
+				var parentWidth = $("#parent-article").width();
+				var left 		= 30;
+				var inc 		= parentWidth / eles.not(".not").length;
+
+				if(inc > 295){
+					inc = 285;
+				}
+
+				inc = 50;
+
+				$(".mover").remove();
+
+				eles.not(".not").each(function(x,u){
+					var me 		= $(this);
+					var dragger = $("#mover").html();
+					var target 	= me.data("target");
+					var idx = ++that.lastIdx;
+					dragger = dragger.replace("[TARGET]", target).
+						replace("[LABEL]",me.html()).
+						replace("[ZINDEX]", idx).
+						replace("[LEFT]",left + "px");
+
+
+
+					$("#articles").append(dragger);
+
+					if(target == "#about"){
+						$(".mover[data-target='#about']").css({
+							"left" 		: "55%",
+							"zIndex"	: idx
+						}).trigger("drag mousedown mouseup");
+
+						$(target).css({
+							"left" 		: "55%",
+							"zIndex"	: idx
+						});
+
+					} else {
+						$(target).css({
+							"left" 		: left + "px",
+							"zIndex"	: idx
+						});
+					}
+					var lastDrag = null;
+
+					$(".mover").draggable({
+						axis 			: "x",
+						containment 	: "#articles",
+						start 	: function (event, ui){
+							var me 		= $(this);
+							var article = me.data("target");
+
+							$("#articles .active").removeClass("active");
+							$("#articles label").css("backgroundColor", "#656565");
+							me.find("label").css("backgroundColor", "#2F2DAD");
+							$(article).addClass("active").css("zIndex", ++that.lastIdx);
+
+							me.css("zIndex", ++that.lastIdx);
+						},
+						drag 	: function (event, ui){
+							var me 		= $(this);
+							var left 	= me.offset().left;
+							var article = me.data("target");
+
+							$(article).css("left", left);
+
+							lastDrag = article;
+						},
+						stop 	: function(event, ui){
+							// if(lastDrag == "#about"){
+							// 	$("#about").find("iframe").attr("src","skills2.html");
+							// 	// alert("done");
+							// }
+						}
+					});
+
+					left += inc;
+				});
+			}
+		}
+
+		$(document).ready(function(){
+			Page.__init();
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

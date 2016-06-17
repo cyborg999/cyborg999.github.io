@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/design1.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.6.3/css/font-awesome.min.css">
+	<title>Design 2016 #1</title>
+</head>
+<body>
+	<div id="background"></div>
+	<article id="container">
+		<header>
+			<nav>
+				<a href="">
+					<h1>dandismith</h1>
+				</a>
+				<a href="">Lorem <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				<a href="">Ipsum</a>
+				<a href="">Dolor <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				<a href="">Consectetur</a>
+				<a href="">Adipisicing</a>
+				<ul>
+					<li>
+						<a href=""><i class="fa fa-github"></i></a>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-facebook-official"></i></a>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-google-plus"></i></a>
+					</li>
+					<li>
+						<a href=""><i class="fa fa-instagram"></i></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="banner">
+				<div class="move-left">
+					<i class="fa fa-angle-left"></i>
+				</div>
+				<div id="slides">
+					<div class="slide active" data-src="img/flame1.jpg">
+						<h3> Duis aute irure dolor</h3>
+						<h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+						<a href="">continue</a>
+						<img class="layer-1" src="img/flames.png">
+					</div>
+				</div>
+				<div class="move-right">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</section>
+			<section id="featured">
+				<article class="feature ">
+					<img class="layer-1" src="img/b1.png">
+					<img class="layer-2" src="img/b2.png">
+					<div class="content">
+						<h3> Duis aute irure dolor</h3>
+						<h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+						<a href="">continue</a>
+					</div>
+				</article>
+				<article class="feature">
+					<img class="layer-1" src="img/b5.png">
+					<img class="layer-2" src="img/b6.png">
+					<div class="content">
+						<h3>incididunt ut labore</h3>
+						<h4>ullamco laboris nisi ut aliquip ex ea culpa qui offic commodo  cillum dolore e Ut enim ad minim ve it amet,  consequat.</h4>
+						<a href="">continue</a>
+					</div>
+				</article>
+				<article class="feature">
+					<img class="layer-1" src="img/b3.png">
+					<img class="layer-2" src="img/b4.png">
+					<div class="content">
+						<h3>culpa qui officia deserunt</h3>
+						<h4>Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur dolore.</h4>
+						<a href="">continue</a>
+					</div>
+				</article>
+			</section>
+			<section id="product-detail">
+				<div class="product-img left">
+					<img src="img/shoe.png">
+				</div>
+				<div class="product-desc">
+					<label>officia deserunt</label>
+					<h3>exercitation ullamco</h3>
+					<h4>Irure dolor</h4>
+					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+					<a href="">ullamco laboris</a>
+				</div>
+			</section>
+			<section id="transparent-box">
+				<h3>culpa qui officia deserunt</h3>
+				<h4>Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur dolore.</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<a href="">continue</a>
+			</section>
+			<section id="contact">
+				<form>
+					<input type="text" placeholder="email"></input>
+					<textarea rows="5" placeholder="message"></textarea>
+					<br>
+					<input type="submit" value="send"></input>
+				</form>
+			</section>
+		</main>
+		<footer>
+		</footer>
+	</article>
+
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript">
+		(function($){
+			var Page = {
+				__init 	: function(){
+					this.__listen();
+					this.generateSlides();
+					// this.animation();
+				},
+				__listen : function(){
+					var me = this;
+					//on resize, generateslides again
+					$(window).resize(function(){
+						me.generateSlides();
+					});
+				},
+				animation : function(){
+					var slides = $(".active .layer-1");
+
+					slides.on("mousemove", function(){
+						var left = Math.random() * (100 - 0) + 1;
+						var top = Math.random() * (100 - 0) + 1;
+						var me = $(this);
+
+						me.animate({
+							"left" : left,
+							"top" 	: top
+						});
+						console.log(left);
+					});
+				},
+				generateFeatured: function(){
+
+				},
+				generateSlides : function(){
+					var slides = $("#slides .slide");
+					var banner = $("#banner");
+
+					slides.css("width", banner.width()).removeClass("hidden");
+
+					slides.each(function(x){
+						var slide = $(this);
+
+						slide.css("backgroundImage","url(" + slide.data("src") + ")");
+					});
+
+					console.log("slides resize");
+				}
+			}
+
+			$(document).ready(function(){
+				Page.__init();
+			});
+		})(jQuery);
+	</script>
+</body>
+</html>

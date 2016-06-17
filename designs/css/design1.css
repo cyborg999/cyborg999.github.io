@@ -1,0 +1,487 @@
+@font-face {
+	font-family: "f1";
+	src : url(../fonts/f1.woff2);
+}
+@font-face {
+	font-family: "f2";
+	src : url(../fonts/f2.woff2);
+}
+@font-face {
+	font-family: "f3";
+	src : url(../fonts/f3.woff2);
+}
+@font-face {
+	font-family: "f4";
+	src : url(../fonts/f4.woff2);
+}
+@font-face {
+	font-family: "f5";
+	src : url(../fonts/f5.woff2);
+}
+@font-face {
+	font-family: "f6";
+	src : url(../fonts/f6.woff2);
+}
+
+* {
+	margin:0px;
+	padding: 0px;
+}
+body {
+	background: black;
+}
+.left { float: left; }
+.right { float: right; }
+.clearfix { clear: both; }
+.hidden { display: none; }
+
+#container {
+	width: 100%;
+	position: absolute;
+	min-height: 100%;
+	z-index: 999;
+}
+
+#background {
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url(../img/b5.png);
+    background-size: 90% 71%;
+    z-index: 98;
+    background-repeat: no-repeat;
+    background-position-x: 31%;
+    background-position-y: 78%;
+}
+
+#container header nav {
+	text-align: center;
+	background: black;
+	padding: 30px;
+}
+#container header nav a {
+	color: white;
+	font-size: 15px;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: "f5";
+	margin: 0px 5px;
+}
+#container header nav a h1 {
+	float: left;
+}
+#container header nav a:hover {
+	color: #289ac8;
+	transition: all 700ms;
+}
+#container header nav a i {
+	font-size: 10px;
+	width: 20px;
+}
+#container header nav ul {
+	list-style-type: none;
+	float: right;
+}
+#container header nav ul li {
+	display: inline;
+}
+#container header nav ul a input {
+	border:0px;
+	background: rgba(255,255,255,.7);
+	border-radius: 3px;
+	padding: 3px;
+}
+#container header nav ul a i {
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+#container main {
+}
+#container main #banner {
+	height: 400px;
+	background: white;
+	position: relative;
+	overflow: hidden;
+}
+#container main #banner .move-left {
+	position: absolute;
+	left: 0px;
+	width: 6%;
+	min-width: 60px;
+	height: 100%;
+	font-size: 50px;
+	text-align: center;
+	z-index: 3;
+}
+#container main #banner .move-right {
+	position: absolute;
+	right: 0px;
+	width: 6%;
+	min-width: 60px;
+	height: 100%;
+	font-size: 50px;
+	z-index: 3;
+	text-align: center;
+}
+#container main #banner  i {
+	padding-top: 160px;
+	cursor: pointer;
+	color: white;
+	opacity: .3;
+}
+#container main #banner  i:hover {
+	opacity: 1;
+	transition: all 1s;
+}
+#container main #banner #slides {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 300%;
+	z-index: 2;
+}
+#container main #banner #slides .slide {
+	float: left;
+	height: 100%;
+	min-width: 100px;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+}
+#container main #banner #slides .slide img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+#container main #banner #slides .slide h3 {
+	color: white;
+	text-align: center;
+	padding: 10% 40% 5px;
+	font-size: 35px;
+	font-family: "f3";
+	text-transform: uppercase;
+}
+#container main #banner #slides .slide h4 {
+	color: #289ac8;
+	text-align: center;
+	padding: 10px 35% 5px;
+	font-size: 12px;
+	font-family: "f1";
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#container main #banner #slides .slide a {
+	color: #289ac8;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 20px;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: "f6";
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 3px;
+	border:1px solid #289ac8;
+	margin: auto;
+}
+#container main #banner #slides .slide a:hover {
+	background: white;
+	border:0px;
+	transition: all 1s;
+}
+
+#container main #featured {
+	height: 250px;
+	width: 100%;
+}
+#container main #featured .feature {
+	float: left;
+	width: 33.333%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#container main #featured .feature .layer-1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+#container main #featured .feature .layer-2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0px;
+	top: 0px;
+	z-index: 2;
+}
+#container main #featured .feature:hover .content {
+	background: rgba(0,0,0,.5);
+	transition: 2s all;
+
+}
+#container main #featured .feature:hover .content a {
+	top: 40%;
+	transition: 900ms all;
+
+}
+#container main #featured .feature:hover .content h3 {
+	margin-top: 5%;
+	transition: 400ms all;
+
+}
+#container main #featured .feature .content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	text-align: center;
+	z-index: 3;
+}
+
+#container main #featured .feature .content h3 {
+	color: #289ac8;
+	margin-top: 35%;
+	text-align: center;
+	font-size: 25px;
+	font-family: "f3";
+	text-transform: uppercase;
+}
+#container main #featured .feature .content h4 {
+	color: white;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 13px;
+	padding: 0px 50px;
+	font-family: "f5";
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#container main #featured .feature .content a {
+	color: #289ac8;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 20px;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: "f1";
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 9999;
+	border:1px solid #289ac8;
+	position: absolute;
+	top: 100%;
+}
+
+#container main #product-detail {
+	background: black;
+	padding: 10px;
+	float: left;
+}
+#container main #product-detail .product-img {
+	width: 50%;
+	height: 100%;
+}
+#container main #product-detail .product-img img {
+	width: 80%;
+	height: 100%;
+	float: right;
+}
+#container main #product-detail .product-desc {
+    width: 40%;
+    float: left;
+    margin-left: 3%;
+}
+#container main #product-detail .product-desc label {
+	color: #000;
+    background-color: #289ac8;
+    padding: 3px;
+    display: inline-block;
+    margin: 35px 0px 0px;
+    font-family: "f3";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+#container main #product-detail .product-desc h3 {
+    color: #289ac8;
+    font-family: "f2";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 5px;
+}
+#container main #product-detail .product-desc h4 {
+    color: white;
+    font-family: "f1";
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+}
+#container main #product-detail .product-desc h5 {
+    font-family: "f1";
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: normal;
+    color: white;
+}
+#container main #product-detail .product-desc a {
+	color: #289ac8;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 20px;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: "f1";
+	float: left;
+	text-transform: uppercase;
+	text-align: center;
+	border:1px solid #289ac8;
+	margin-top: 20px;
+}
+
+#container main #transparent-box {
+	height: 500px;
+	width: 500px;
+	margin-bottom: 30px;
+	color: black;
+	background: transparent;
+	margin: 40px;
+	float: left;
+}
+
+#container main #transparent-box h3 {
+    color: #289ac8;
+    font-family: "f2";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 5px;
+}
+#container main #transparent-box h4 {
+    color: white;
+    font-family: "f1";
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+}
+#container main #transparent-box p {
+    font-family: "f1";
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: normal;
+    color: white;
+}
+#container main #transparent-box a {
+	color: #289ac8;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 20px;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: "f1";
+	float: left;
+	text-transform: uppercase;
+	text-align: center;
+	border:1px solid #289ac8;
+	margin-top: 20px;
+}
+
+#container main #contact {
+	height: 300px;
+	width: 100%;
+	background-image: url(../img/footer.jpg);
+	background-size: 100% 100%;
+	margin-bottom: 30px;
+	float: left;
+}
+
+#container main #contact form {
+	width: 80%;
+	height: 100%;
+	padding: 20px;
+	margin: auto;
+	text-align: center;
+}
+
+#container main #contact form input[type="text"],
+#container main #contact form textarea  {
+	width: 80%;
+	border: 0px;
+	background: rgba(0,0,0,.5);
+	margin: 10px 0px;
+	padding: 15px;
+}
+#container main #contact form input[type="submit"] {
+	color: #289ac8;
+	cursor: pointer;
+	clear: both;
+	text-align: center;
+	font-weight: bold;
+	display: block;
+	padding: 5px 20px;
+	font-size: 14px;
+	font-family: "f1";
+	padding: 5px 30px;
+	text-transform: uppercase;
+	text-align: center;
+	margin: auto;
+	border:1px solid #289ac8;
+	margin-top: 20px;
+	background: transparent;
+}
+
+
+@media screen and (max-width: 720px) {
+	nav h1 {
+	    float: initial!important;
+	    margin: 0px 0px 10px;
+	}	
+	nav a { display: block; }
+	#container header nav ul {
+		margin-top: 20px;
+		float: initial;
+	}
+	#container header nav ul li {
+		display: inline;
+	}
+	#container header nav ul li a {
+		display: inline;
+	}
+	#container main #banner #slides .slide h3 {
+    	padding: 10% 30% 5px;
+	}
+	#container main #featured .feature {
+		width: 100%;
+	}
+	#container main #product-detail .product-desc {
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+	#container main #product-detail .product-img {
+		width: 90%;
+		height: 100%;
+		margin: auto;
+		text-align: center;
+	}
+	#container main #product-detail .product-desc a {
+    float: left;
+    margin-top: 46px;
+    width: 86%;
+	}
+}
