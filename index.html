@@ -23,10 +23,10 @@
 	<nav>
 		<a data-target="#all" class="not nav-active" href="home.html">Home</a> |
 		<a data-target="#home" href="home.html">Github Repo</a> |
-		<a data-target="#design" href="design.html">Design</a> |
-		<a data-target="#lorem" href="design.html">IOS</a> |
+		<a data-target="#lorem" href="design.html">Mobile</a> |
 		<a data-target="#ipsum" href="design.html">Angular</a> |
-		<a data-target="#sit" href="design.html">Extension</a> |
+		<a data-target="#sit" href="design.html">Plugin</a> |
+		<a data-target="#design" href="design.html">Design</a> |
 		<a data-target="#about" href="about.html">About</a> 
 	</nav>
 	<article id="main">
@@ -47,8 +47,8 @@
 	</article>
 	<section  id="articles">
 		<span id="parent-article">
-			<article class="container active" id="about">
-				<main class="clear" style="height:360px;">
+			<article class="container" id="about">
+				<main class="clear cover" style="height:360px;">
 					<iframe class="about" frameborder="0" scrolling="no" src="skills2.html"></iframe>
 				</main>
 			</article>
@@ -85,15 +85,6 @@
 				</main>
 			</article>
 			<article class="container" id="sit">
-				<main class="clear">
-					<article class="left" data-href="designs/design1.html">
-						<figure>
-						  <img src="designs/design1.png" alt="The Pulpit Rock">
-						</figure>
-					</article>
-				</main>
-			</article>
-			<article class="container" id="dolor">
 				<main class="clear">
 					<article class="left" data-href="designs/design1.html">
 						<figure>
@@ -358,6 +349,7 @@
 					var target 	= me.parents("article.container");
 
 					if(target.hasClass("active") == false){
+						alert("d2");
 						$("nav a[data-target='#" + target.attr("id") + "'").trigger("click");
 
 						that.delayModal = true;
@@ -812,7 +804,7 @@
 					$("#articles label").css("backgroundColor", "#656565");
 
 					me.addClass("nav-active");
-					mover.find("label").first().css("backgroundColor", "#3737FD");
+					mover.find("label").first().css("backgroundColor", "#13bd8f");
 
 					$(target).addClass("active");
 
