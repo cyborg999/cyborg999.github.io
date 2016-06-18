@@ -16,15 +16,23 @@
 }
 @font-face {
 	font-family: 'f1';
-	src: url('../fonts/ScalaSans-Regular.woff2');
+	src: url('../fonts/new/calendas_plus_italic.woff2');
+	/*src: url('../fonts/ScalaSans-Regular.woff2');*/
 }
 @font-face {
 	font-family: 'f2';
-	src: url('../fonts/subset-FreightBigBookItalic.woff2');
+	src: url('../fonts/new/geomanist-medium.woff2');
+	/*src: url('../fonts/subset-FreightBigBookItalic.woff2');*/
 }
 @font-face {
 	font-family: 'f3';
-	src: url('../fonts/subset-FreightBigBook.woff2');
+	src: url('../fonts/new/geomanist-light.woff2');
+	/*src: url('../fonts/subset-FreightBigBook.woff2');*/
+}
+@font-face {
+	font-family: 'f4';
+	src: url('../fonts/new/geomanist-book.woff2');
+	/*src: url('../fonts/subset-FreightBigBook.woff2');*/
 }
 /*
 ScalaSans-Regular.woff2
@@ -49,23 +57,30 @@ body {
 }
 
 h1 {
-	font-size: 2em;
-	font-weight: bold;
-	font-size: 40px;
-	line-height: 1.1;
-	letter-spacing: -1px;
-	font-family: "Myriad Pro Regular";
+    color: #AFAFAF;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 50px!important;
+    font-size: 0.8em;
 }
 
 h2 {
-	font-size: 35px;
-	font-size: 2em;
-	font-weight: bold;
-	line-height: 1.1;
-	letter-spacing: -1px;
-	font-family: "Myriad SemiBold","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+    font-weight: 600;
+    font-size: 4em;
+    letter-spacing: -1px;
+    margin-top: 0;
+    line-height: 1.1em;
+    font-family: "f4";
+    margin-top: 0px!important;
 }
 
+h2 em {
+    color: #13bd8f;
+    font-size: 53px;
+    font-weight: bold;
+    font-family: "f1";
+    letter-spacing: -2px;
+}
 h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, th {
 	margin-top: 1.2em;
 }
@@ -190,7 +205,7 @@ nav {
     width: 100%;
 }
 .nav-active {
-    background: #3737FD;
+    background: #13bd8f;
     padding: 2px 5px;
     border-radius: 3px;
     color: white;
@@ -247,7 +262,7 @@ article figcaption span {
 	position: absolute;
 	width: 100%;
 	min-height: 100%;
-	top: 335px;
+	top: 375px;
 }
 #articles .container {
 	position: absolute;
