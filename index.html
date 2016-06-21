@@ -23,9 +23,9 @@
 	<nav>
 		<a data-target="#all" class="not nav-active" href="home.html">Home</a> |
 		<a data-target="#home" href="home.html">Github Repo</a> |
-		<a data-target="#lorem" href="design.html">Mobile</a> |
-		<a data-target="#ipsum" href="design.html">Angular</a> |
-		<a data-target="#sit" href="design.html">Plugin</a> |
+		<a data-target="#geocoding" href="design.html">Geo-Coding</a> |
+		<!-- <a data-target="#ipsum" href="design.html">Angular2</a> | -->
+		<a data-target="#plugin" href="design.html">Plugin</a> |
 		<a data-target="#design" href="design.html">Design</a> |
 		<a data-target="#about" href="about.html">About</a> 
 	</nav>
@@ -33,11 +33,10 @@
 		<section style="">
 			<header>
 				<h1 itemprop="headline">Hello, I'm Jordan Sadiwa</h1>
-				<h2>I'm a <em>full-stack Web Developer</em> <br>from Pasay, Philippines.</h2>
+				<h2>I'm a <em>full-Stack Web Developer</em> <br>from Pasay, Philippines.</h2>
 				<div class="intro">
 					<p> For the past 3+ years I've worked as a Web Developer, both backend and frontend mostly from scratch and using custom frameworks. </p> 
-
-<p>I'm currently freelancing and always up for new challenges, where I can collaborate with people and companies to get their product ideas rolling.</p>
+					<p>I'm currently freelancing and always up for new challenges, where I can collaborate with people and companies to get their product ideas rolling.</p>
 					<div id="fbgroup">
 						<iframe frameborder="0" src="fbpage_like.html"></iframe>
 					</div>
@@ -47,8 +46,8 @@
 	</article>
 	<section  id="articles">
 		<span id="parent-article">
-			<article class="container" id="about">
-				<main class="clear cover" style="height:360px;">
+			<article class="container active" id="about">
+				<main class="clear " style="height:360px;">
 					<iframe class="about" frameborder="0" scrolling="no" src="skills2.html"></iframe>
 				</main>
 			</article>
@@ -66,16 +65,11 @@
 				<main class="clear">
 				</main>
 			</article>
-			<article class="container" id="lorem">
+			<article class="container" id="geocoding">
 				<main class="clear">
-					<article class="left" data-href="designs/design1.html">
-						<figure>
-						  <img src="designs/design1.png" alt="The Pulpit Rock">
-						</figure>
-					</article>
 				</main>
 			</article>
-			<article class="container" id="ipsum">
+		<!-- 	<article class="container" id="ipsum">
 				<main class="clear">
 					<article class="left" data-href="designs/design1.html">
 						<figure>
@@ -83,15 +77,9 @@
 						</figure>
 					</article>
 				</main>
-			</article>
-			<article class="container" id="sit">
-				<main class="clear">
-					<article class="left" data-href="designs/design1.html">
-						<figure>
-						  <img src="designs/design1.png" alt="The Pulpit Rock">
-						</figure>
-					</article>
-				</main>
+			</article> -->
+			<article class="container" id="plugin">
+				<main class="clear"></main>
 			</article>
 		</span>
 	</section>
@@ -112,7 +100,7 @@
 	<div id="modal" class="hidden">
 		<div class="left-preview left">
 		<div class="img-container">
-			<img src="assets/img/design3.png">
+			<img src="assets/img/its-something-meme.gif">
 			<p>
 				<i  id="preloader" class="fa fa-cog fa-spin"></i>
 			</p>
@@ -159,7 +147,7 @@
  	</script>
 	<script type="text/html" id="mover">
 		<span class="mover" data-target="[TARGET]" data-zindex="[ZINDEX]" style="left:[LEFT];">
-			<label>[LABEL]</label>
+			<label style="[BACKGROUND]">[LABEL]</label>
 			<i class="fa fa-arrows-h"></i>
 		</span>
 	</script>
@@ -180,7 +168,7 @@
 
 				if(zIndex != null){
 					if(zIndex == "1003"){
-						// percent = "55%";
+						percent = "55%";
 						$(this.ele).stop().animate({
 							"left" 		: percent,
 							"zIndex"  	: zIndex
@@ -202,7 +190,7 @@
 						"left" 	: percent,
 						"zIndex"  	: zIndex
 					});
-					console.log(percent);
+
 				} else {
 					$(this.ele).stop().animate({
 						"left" 	: percent
@@ -310,21 +298,30 @@
 			__defaultListener : function(){
 				var that = this;
 
-				$("article.container article").off().hover(function(){
+				$("article.container article").off().hover(function(e){
+					var me = $(this);
+
 					var content = $("#preview-article").html();
 					var articleName = $(this).parents(".container").attr("id");
+
+					if($(".cover").first() != me.find(".cover")){
+						$(".cover").first().remove();
 					
-					if(articleName == "design"){
-						content = content.replace("[PREVIEW]", "preview-page");
+						if(articleName == "design"){
+							content = content.replace("[PREVIEW]", "preview-page");
+						} 
+
+						$(this).find("img").first().before(content);
+						$(".cover").hide().fadeIn("slow");	
+
+						that.__defaultListener();
 					}
-
-					$(".cover").first().remove();
-					$(this).find("img").first().before(content);
-					$(".cover").hide().fadeIn("slow");	
-
-					that.__defaultListener();
 				}, function(){
-					$(".cover").first().remove();
+					// var articleName = $(this).parents(".container").attr("id");
+
+					// if(articleName != "design"){
+						$(".cover").first().remove();
+					// }
 				});
 
 				$(".box").off().on("click", function(e){
@@ -349,7 +346,6 @@
 					var target 	= me.parents("article.container");
 
 					if(target.hasClass("active") == false){
-						alert("d2");
 						$("nav a[data-target='#" + target.attr("id") + "'").trigger("click");
 
 						that.delayModal = true;
@@ -555,11 +551,7 @@
 											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12494794_933656090065650_7884582570816193274_n.jpg?oh=db9d63e6915a1236a075e9fc0e91e53a&oe=5791DD91"
 										}
 									]
-								},
-								"55028781" : {
-									preview : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xal1/v/t1.0-9/12670739_933740256723900_6506452615594822503_n.png?oh=8fea2d0574291989c94de5d65774ce4e&oe=57877691&__gda__=1468414150_4165ea88588613b0c3022269fec726aa",
-									thumbnails : []
-								},
+								},	
 								"55037606" : {
 									preview : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/12801542_933633270067932_8707243124488021347_n.jpg?oh=d40eb0ab1610322c22bc6177063e4030&oe=578E66D4&__gda__=1469530850_240b5145a914bf5b20e0074cb879d543",
 									thumbnails : [
@@ -582,23 +574,6 @@
 										{
 											"page" : "Private",
 											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12524376_933633406734585_3994167083712263828_n.jpg?oh=26d52695a554917809348aa29dd4492c&oe=5777D421"
-										}
-									]
-								},
-								"55037666" : {
-									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821",
-									thumbnails : [
-										{
-											"page" : "Summary",
-											"link" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfl1/v/t1.0-9/12931025_933634133401179_8279888773663692384_n.png?oh=93336c58dc2c762e88b8034a142a968d&oe=57913372&__gda__=1467733104_890683c8ea46902f2951d6103d33a9e3"
-										},
-										{
-											"page" : "Authentication",
-											"link" : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/12494849_933634126734513_7986625188463987540_n.png?oh=e408a5d4b79f06f689f36db089c234b9&oe=578BB409&__gda__=1467655181_72abbdda6790667933a637534494f11e"
-										},
-										{
-											"page" : "Search Page",
-											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821"
 										}
 									]
 								},
@@ -662,6 +637,39 @@
 									]
 								}
 							};
+				var plugins 	= {
+					"55028781" : {
+									preview : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xal1/v/t1.0-9/12670739_933740256723900_6506452615594822503_n.png?oh=8fea2d0574291989c94de5d65774ce4e&oe=57877691&__gda__=1468414150_4165ea88588613b0c3022269fec726aa",
+									description : "Generates an HTML preview of any .md file in the dropbox's current directory. (Browser Extension/Plugin for Google Chrome and Safari)",
+									thumbnails : [
+										{
+											"page" : "Services",
+											"link" : "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xal1/v/t1.0-9/12670739_933740256723900_6506452615594822503_n.png?oh=8fea2d0574291989c94de5d65774ce4e&oe=57877691&__gda__=1468414150_4165ea88588613b0c3022269fec726aa"
+										}
+									]
+								}
+				}
+
+				var geocoding 	= {
+						"55037666" : {
+									preview : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821",
+									description : "Map the whole Germany to locate the exact location of all the post office using Quantum GIS and Open Street Map.",
+									thumbnails : [
+										{
+											"page" : "Summary",
+											"link" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfl1/v/t1.0-9/12931025_933634133401179_8279888773663692384_n.png?oh=93336c58dc2c762e88b8034a142a968d&oe=57913372&__gda__=1467733104_890683c8ea46902f2951d6103d33a9e3"
+										},
+										{
+											"page" : "Authentication",
+											"link" : "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/12494849_933634126734513_7986625188463987540_n.png?oh=e408a5d4b79f06f689f36db089c234b9&oe=578BB409&__gda__=1467655181_72abbdda6790667933a637534494f11e"
+										},
+										{
+											"page" : "Search Page",
+											"link" : "https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/944324_933634146734511_3637239836483796451_n.png?oh=7ec6b62e5ccf001e7ba256a253cabd91&oe=5772E821"
+										}
+									]
+								},
+				}
 
 				$.ajax({
 					url 	: url,
@@ -695,6 +703,58 @@
 
 								target.append(tpl);
 							} 
+
+							if(plugins[response[i].id] != null){
+								var small 		= Array();
+								var tpl 		= $("#article-data").html();
+								var lang 		= (response[i].language == null) ? "HTML</span><span>CSS</span><span>JS" : response[i].language;
+								var name 		= response[i].name.replace(/-/g, " ");
+								var thumbnails 	= plugins[response[i].id]['thumbnails'];
+
+								for(var x in thumbnails){
+									if(thumbnails[x]["link"] != null){
+										small.push(thumbnails[x]["link"]);
+									}
+								}
+
+								small 	= small.join(";");
+								tpl 	= tpl.replace("[TITLE]", name).
+											replace("[TITLE]", name).
+											replace("[PREVIEWBIG]", plugins[response[i].id].preview).
+											replace("[PREVIEWSMALL]", small).
+											replace("[GITCLONE]", response[i].clone_url).
+											replace("[PREVIEW]", plugins[response[i].id].preview).
+											replace("[LANG]", lang).
+											replace("[DESCRIPTION]", plugins[response[i].id].description);
+
+								$("#plugin main").append(tpl);
+							}
+
+							if(geocoding[response[i].id] != null){
+								var small 		= Array();
+								var tpl 		= $("#article-data").html();
+								var lang 		= (response[i].language == null) ? "HTML</span><span>CSS</span><span>JS" : response[i].language;
+								var name 		= response[i].name.replace(/-/g, " ");
+								var thumbnails 	= geocoding[response[i].id]['thumbnails'];
+
+								for(var x in thumbnails){
+									if(thumbnails[x]["link"] != null){
+										small.push(thumbnails[x]["link"]);
+									}
+								}
+
+								small 	= small.join(";");
+								tpl 	= tpl.replace("[TITLE]", name).
+											replace("[TITLE]", name).
+											replace("[PREVIEWBIG]", geocoding[response[i].id].preview).
+											replace("[PREVIEWSMALL]", small).
+											replace("[GITCLONE]", response[i].clone_url).
+											replace("[PREVIEW]", geocoding[response[i].id].preview).
+											replace("[LANG]", lang).
+											replace("[DESCRIPTION]", geocoding[response[i].id].description);
+
+								$("#geocoding main").append(tpl);
+							}
 						}
 						
 						that.__defaultListener();
@@ -761,7 +821,6 @@
 						var idx 	= defaultPos[i][2];
 						var mover 	= new Mover(article,0,left);
 
-						console.log(idx);
 						mover.hideArticle(idx);
 					}
 				});
@@ -808,10 +867,11 @@
 
 					$(target).addClass("active");
 
-					if(target == "#about"){
-						$("#about").find("iframe").attr("src","skills2.html");
-						// alert("done");
-					}
+					// if(target == "#about"){
+					// 	$("#about").find("iframe").attr("src","skills2.html");
+					// 	// alert("done");
+					// }
+
 					that.moveArticle(target, mover);
 				});	
 			},
@@ -860,23 +920,30 @@
 					var dragger = $("#mover").html();
 					var target 	= me.data("target");
 					var idx = ++that.lastIdx;
-					dragger = dragger.replace("[TARGET]", target).
-						replace("[LABEL]",me.html()).
-						replace("[ZINDEX]", idx).
-						replace("[LEFT]",left + "px");
-
-
-
+					var txt = (me.html() == "Geo-Coding") ? "Geo-<br>Coding" : me.html();
+					if(target=="#about"){
+						dragger = dragger.replace("[TARGET]", target).
+							replace("[LABEL]", txt).
+							replace("[ZINDEX]", idx).
+							replace("[BACKGROUND]", "background-color: rgb(19, 189, 143);").
+							replace("[LEFT]",left + "px");
+					} else {
+						dragger = dragger.replace("[TARGET]", target).
+							replace("[LABEL]", txt).
+							replace("[ZINDEX]", idx).
+							replace("[LEFT]",left + "px");
+					}
+					
 					$("#articles").append(dragger);
 
 					if(target == "#about"){
 						$(".mover[data-target='#about']").css({
-							"left" 		: "55%",
+							"left" 		: "42%",
 							"zIndex"	: idx
 						}).trigger("drag mousedown mouseup");
 
 						$(target).css({
-							"left" 		: "55%",
+							"left" 		: "42%",
 							"zIndex"	: idx
 						});
 
@@ -886,6 +953,9 @@
 							"zIndex"	: idx
 						});
 					}
+					
+					$(target).hide().delay(1000).fadeIn("slow");
+
 					var lastDrag = null;
 
 					$(".mover").draggable({
