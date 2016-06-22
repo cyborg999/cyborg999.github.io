@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/design2.css">
+</head>
+<body>
+	<div id="container">
+		<div id="slides">
+			<div class="slide active">
+				<div class="back">
+					<img src="img/slide1.jpg">
+				</div>
+				<div class="top-left cover"></div>
+				<div class="bottom-left cover"></div>
+				<div class="top-right cover"></div>
+				<div class="bottom-right cover"></div>
+			</div>
+			<div class="slide active">
+				<div class="back">
+					<img src="img/slide2.jpg">
+				</div>
+				<div class="top-left cover"></div>
+				<div class="bottom-left cover"></div>
+				<div class="top-right cover"></div>
+				<div class="bottom-right cover"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+	(function($){
+		var Page = {
+			__init 	: function(){
+				this.__listen();
+			},
+			__listen 	: function(){
+				this.slideshow();
+				this.selectAll();
+			},
+		 	selectAll : function(){
+				var e = document.getElementsByTagName('BODY')[0];
+				var r = document.createRange();
+				r.selectNodeContents(e);
+				var s = window.getSelection();
+				s.removeAllRanges();
+				s.addRange(r);
+			},
+			slideshow 	: function(){
+				var slides = $("#slides .slide.active");
+				function clearSelection() {
+				    if (window.getSelection) window.getSelection().removeAllRanges();
+				    else if (document.selection) document.selection.empty();
+				}
+
+				var slide = function(slideIdx, idx,ele){
+					setTimeout(function(){
+						var length = ele.find(".cover").length;
+						console.log(idx,length);
+
+						if(idx < length){
+							ele.find(".cover").eq(idx).fadeOut(1000, "easeOutBack");
+							idx++;
+
+							if(idx == 4){
+								clearSelection();
+							}
+
+							slide(1,idx, ele, max);
+						} else {
+							var next = ele.next(".slide").length;
+
+							if(next != null){
+								slideIdx++;
+
+								ele.next(".slide").addClass("active");
+								ele.removeClass("active");
+							} else {
+								slideIdx = 0;
+							}
+						}
+					},200);
+				}
+
+				slide(0,1, slides);
+			}
+		}
+
+		$(document).ready(function(){
+			Page.__init();
+		});
+
+	})(jQuery);
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+* {
+	margin:0px;
+	padding: 0px;
+}
+
+.left { float: left; }
+.right { float: right; }
+.clearfix { clear: both; }
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/background.jpg);
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+#container #slides {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#container #slides .slide {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#container #slides .slide .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#container #slides .slide .back img {
+	opacity: .8;
+	width: 100%;
+	height: 100%;
+}
+#container #slides .slide .cover {
+	background-image: url(../img/sprites-2.png);
+	background-repeat: no-repeat;
+	opacity: .9;
+}
+#container #slides .slide .cover2 {
+	background-image: url(../img/sprites-0.png);
+	background-repeat: no-repeat;
+	opacity: .9;
+}
+#container #slides .slide .top-left {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    background-size: 305% 300%;
+    /*opacity: .9;*/
+    background-position: 5px 0;
+}
+#container #slides .slide .top-right {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    background-size: 305% 300%;
+    /*opacity: .8;*/
+    background-position: 47% 0;
+}
+#container #slides .slide .bottom-left {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    background-size: 305% 300%;
+    background-position: 0% 49%;
+    /*opacity: .7;*/
+}
+#container #slides .slide .bottom-right {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    background-size: 305% 300%;
+    background-position: 48% 98%;
+    /*opacity: .6;*/
+}
