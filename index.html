@@ -57,6 +57,8 @@
 				</div>
 				<div class="indicator"></div>
 			</div>
+			<div class="progress"></div>
+			<div class="progress percent"></div>
 		</section>
 	</article>
 	<section  id="articles">
@@ -240,6 +242,45 @@
 					});
 				});
 			},
+			__slideshow 	 : function(){
+				var percent = $(".percent").first();
+				var indicator = $(".indicator").first();
+				var max = $(".thumbs .thumb").length;
+				var section = $("#main section").after();
+				var counter = 1;
+
+				var slide = function(ele, indicator, counter, max, section){
+					ele.stop().animate({
+						"width" 	: "100%"
+					},10000,"easeOutBack", function(){
+						ele.css("width", 0);
+
+						if(max == counter){
+							indicator.stop().animate({
+								"left" : "-1"
+							},1000, "easeOutElastic", function(){
+								slide(ele, indicator, ++counter, max);
+							});
+
+							counter = 0;
+						} else {
+							// var src = $(".thumbs .thumb:eq(" + counter + ") img").attr("src");
+
+							// console.log(section.length);
+							// section.css("backgroundImage", src);
+
+							indicator.stop().animate({
+								"left" : "+=163" 
+							},1000, "easeOutElastic", function(){
+								slide(ele, indicator, ++counter, max, section);
+							});
+						}
+						
+					});
+				}
+
+				slide(percent, indicator, counter, max, section);
+			},
 			__listen 		 : function(){
 				var me = this;
 
@@ -250,6 +291,7 @@
 				// me.showAbout();
 				me.getRepo();
 				me.__responsive();
+				me.__slideshow();
 
 				//default
 
