@@ -58,8 +58,9 @@ body {
 
 h1 {
     color: #AFAFAF;
+    color: black;
     text-transform: uppercase;
-    font-weight: 400;
+    /*font-weight: lighter;*/
     margin-top: 50px!important;
     font-size: 0.8em;
 }
@@ -180,7 +181,7 @@ img {
 	max-width: 100%;
 }
 nav {
-	background: #DEDED8;
+	background: rgba(0,0,0,.1);
     padding: 5px;
     position: fixed;
     z-index: 20000;
@@ -214,27 +215,83 @@ nav {
 }
 nav a {
 	margin: 5px;
+	color: white;
 	display: inline;
 	text-decoration: none;
 }
 #main {
+	background-color: black;
 	position: relative;
 	margin: 0px;
 	width: 100%;
 	z-index: 10001;
+
 }
 #main section {
 	padding: 30px;
-	/*background:#FBFBFB;*/
-	background: #f5f5f5;
+	background: black;
+	position: relative;
+	z-index: 1;
+}
+#main section  h1, 
+#main section  h2, 
+#main section  p {
+	color: white;
+	position: relative;
+	z-index: 99999;
+}
+#main section::after {
+content: "";
+  background: url(../img/img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+#main section .thumbs {
+    height: 95px;
+    width: 100%;
+    margin-top: 25px;
+    cursor: pointer;
+    position: relative;
+}
+#main section .thumbs .indicator {
+    height: 110px;
+    width: 160px;
+    position: absolute;
+    background: rgba(82, 255, 10, 0.1);
+    top: -8px;
+    left: -1px;
+}
+#main section .thumbs .thumb {
+	width: 150px;
+    height: 90px;
+    margin: 3px 4px;
+    opacity: .7;
+    float: left;
+    padding-right: 5px;
+    cursor: pointer;
+}
+#main section .thumbs .thumb:hover {
+	opacity: 1;
+	transition: 1s all;
+
+}
+#main section .thumbs img {
+	width: 100%;
+	min-height: 100%;
 }
 #parent-article {
 	position: absolute;
 	left: 0px;
-	/*overflow: hidden;*/
 	width: 100%;
 	min-height: 100%;
-	/*min-height: 55%;*/
 }
 #parent-article main article p{
 	max-height: 84px;
@@ -264,7 +321,7 @@ article figcaption span {
 	position: absolute;
 	width: 100%;
 	min-height: 100%;
-	top: 375px;
+	top: 485px;
 }
 #articles .container {
 	position: absolute;
