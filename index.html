@@ -7,7 +7,7 @@
 	<meta name="description" content="Hello, Im Jordan Sadiwa. 25, Full Stack Web Developer from Pasay City. Feel free to contact me. sadiwajordan@yahoo.com">
 	<meta name="robots" content="INDEX, FOLLOW">
 	<meta itemprop="name" content="jordan sadiwa">
-   	<meta name="author" content="Jasper Carpizo">
+   	<meta name="author" content="Jordan Sadiwa">
  	<meta name="keywords"
           content="PHP,MySQL,JavaScript,AngularJS,HighCharts,CSS,HTML5,Bootstrap,Doctrine Query Language,Unix Shell Scripting,Symfony,Laravel,ORM,Object Oriented Programming in PHP, Programming, PHP Storm, Composer, Bower, Grunt, Task Runner, Trello, Slacks, SPHINX, SourceTree, MAMP PRO, Transmit, Repositories, Google, Ubuntu, Linux, Unix, MacBook Pro, OS X El Capitan, GitHub, SEO, Google Analytics, Jquery, Jquery UI, Snippets Code, Database, Jordan Sadiwa, Dandismith, Dan Smith, Jordan De Los Reyes Sadiwa,PHP Developer, MySql Developer, Database Administrator,Repository, BitBucket, Git, GitFlow, Source Code,Backbone JS, Kohana, Jordan PHP, Sadiwa, Jordan, Programmer, Systems Developer,Best Programmer, Ninja, iOS, PHP Programming, Node JS, Unix Developer, Unix, Full Stack Web Developer">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -22,17 +22,18 @@
 	<![endif]-->
 </head>
 <body>
+	<h1 itemprop="headline" class="hidden">Jordan Sadiwa</h1>
 	<nav>
-		<a data-target="#all" class="not nav-active" href="home.html">Home</a> |
-		<a data-target="#home" href="home.html">Github Repo</a> |
-		<a data-target="#geocoding" href="design.html">Geo-Coding</a> |
-		<!-- <a data-target="#ipsum" href="design.html">Angular2</a> | -->
-		<a data-target="#plugin" href="design.html">Plugin</a> |
-		<a data-target="#design" href="design.html">Design</a> |
-		<a data-target="#about" href="about.html">About</a> 
+		<a data-target="#all" class="not nav-active" href="http://jordansadiwa.com/home.html">Home</a> |
+		<a data-target="#home" href="http://jordansadiwa.com/home.html">Github Repo</a> |
+		<a data-target="#geocoding" href="http://jordansadiwa.com/design.html">Geo-Coding</a> |
+		<a data-target="#plugin" href="http://jordansadiwa.com/design.html">Plugin</a> |
+		<a data-target="#design" href="http://jordansadiwa.com/design.html">Design</a> |
+		<a data-target="#about" href="http://jordansadiwa.com/about.html">About</a> 
 	</nav>
-	<article id="main">
-		<section style="">
+	<article id="main" class="fast-back">
+		<section class="slide-1" style="">
+			<div id="blacker" class="slide-1">blacker</div>
 			<header>
 				<h1 itemprop="headline">Hello, I'm Jordan Sadiwa</h1>
 				<h2>I'm a <em>full-Stack Web Developer</em> <br>from Pasay, Philippines.</h2>
@@ -46,14 +47,11 @@
 			</header>
 			<div class="thumbs">
 				<div class="thumb-slides"></div>
-				<div class="thumb">
-					<img src="assets/img/img.jpg" alt="Jordan Sadiwa">
+				<div class="thumb slide-1">
 				</div>
-				<div class="thumb">
-					<img src="assets/img/slide1.jpg" alt="Jordan Sadiwa">
+				<div class="thumb slide-2">
 				</div>
-				<div class="thumb">
-					<img src="assets/img/slide2.jpg" alt="Jordan Sadiwa">
+				<div class="thumb slide-3">
 				</div>
 				<div class="indicator"></div>
 			</div>
@@ -73,7 +71,6 @@
 					<article class="left" data-href="designs/design1.html">
 						<figure>
 						  <img src="designs/design1.png" alt="Jordan Sadiwa">
-						  <!-- <figcaption>Design #1 - 6/16/2016</figcaption> -->
 						</figure>
 					</article>
 				</main>
@@ -86,15 +83,6 @@
 				<main class="clear">
 				</main>
 			</article>
-		<!-- 	<article class="container" id="ipsum">
-				<main class="clear">
-					<article class="left" data-href="designs/design1.html">
-						<figure>
-						  <img src="designs/design1.png" alt="The Pulpit Rock">
-						</figure>
-					</article>
-				</main>
-			</article> -->
 			<article class="container" id="plugin">
 				<main class="clear"></main>
 			</article>
@@ -107,7 +95,7 @@
 		</p>
 	</footer>
 	<div id="preview_page">
-		<a href="" id="close-preview">close preview</a>
+		<a href="http://jordansadiwa.com/" id="close-preview">close preview</a>
 		<ul id="responsive">
 			<li><img data-width="1224px" data-height="768px" src="assets/img/screen.png" alt="screen"/></li>
 			<li><img data-width="1024px" data-height="768px" src="assets/img/ipad.png" alt="tab"/></li>
@@ -126,13 +114,13 @@
 		</div>
 		<div class="right-content left">
 			<div class="">
-				<a href="" class="after-this">
+				<a href="http://jordansadiwa.com/" class="after-this">
 					<i class="fa fa-close"></i>
 				</a>
 			</div>
 			<div class="clear description">
 				<h2></h2>
-				<a href="" class="git-clone"></a>
+				<a href="http://jordansadiwa.com/" class="git-clone"></a>
 				<p></p>
 			</div>
 		</div>
@@ -248,11 +236,12 @@
 				var max = $(".thumbs .thumb").length;
 				var section = $("#main section").after();
 				var counter = 1;
+				var target = $("#blacker");
 
 				var slide = function(ele, indicator, counter, max, section){
 					ele.stop().animate({
 						"width" 	: "100%"
-					},10000,"easeOutBack", function(){
+					},10000,"easeInBack", function(){
 						ele.css("width", 0);
 
 						if(max == counter){
@@ -272,6 +261,8 @@
 							indicator.stop().animate({
 								"left" : "+=163" 
 							},1000, "easeOutElastic", function(){
+								target.removeClass().addClass("slide-"+ (counter + 1));
+
 								slide(ele, indicator, ++counter, max, section);
 							});
 						}
