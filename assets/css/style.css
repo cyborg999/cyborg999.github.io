@@ -313,6 +313,7 @@ nav a {
 	left: 0px;
 	width: 100%;
 	min-height: 100%;
+	text-align: center;
 }
 #parent-article main article p{
 	max-height: 84px;

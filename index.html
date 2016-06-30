@@ -60,7 +60,9 @@
 		</section>
 	</article>
 	<section  id="articles">
+
 		<span id="parent-article">
+		<img id="loader" src="assets/img/it-s-something-27d7fb4.gif">
 			<article class="container active" id="about">
 				<main class="clear " style="height:360px;">
 					<iframe class="about" frameborder="0" scrolling="no" src="skills2.html"></iframe>
@@ -283,7 +285,6 @@
 				me.getRepo();
 				me.__responsive();
 				me.__slideshow();
-
 				//default
 
 				$(window).resize(function(){
@@ -457,6 +458,7 @@
 				image.src = filename;
 			},
 			getRepo 		 : function (){
+				var loader = $("#loader");
 				var that 		= this;
 				var target 		= $("#home main");
 				var url 		= "https://api.github.com/users/cyborg999/repos";
@@ -807,6 +809,9 @@
 						
 						that.__defaultListener();
 
+					},
+					complete 	: function(){
+						loader.hide();
 					},
 					error 		: function(){
 						console.log("err");
