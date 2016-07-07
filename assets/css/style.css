@@ -263,7 +263,7 @@ nav a {
 }
 #main section .thumbs {
     height: 95px;
-    width: 100%;
+    width: 80%;
     margin-top: 25px;
     cursor: pointer;
     position: relative;
