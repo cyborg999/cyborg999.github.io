@@ -103,6 +103,7 @@ p {
 .hidden {
 	display: none;
 }
+.fixed-on { position: fixed!important;}
 #preview_page {
 	display: none;
 	position: fixed;
@@ -181,7 +182,8 @@ img {
 	max-width: 100%;
 }
 nav {
-	background: rgba(0,0,0,.1);
+	/*background: rgba(0,0,0,.1);*/
+	background: black;
     padding: 5px;
     position: fixed;
     z-index: 20000;
@@ -377,7 +379,7 @@ article figcaption span {
 }
 #articles .container#about {
 	z-index: 997;
-	left: 55%;
+	/*left: 55%;*/
 }
 #articles .container#about summary{
 	position: fixed;
