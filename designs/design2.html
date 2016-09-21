@@ -7,23 +7,17 @@
 <body>
 	<div id="container">
 		<div id="slides">
-			<div class="slide active">
-				<div class="back">
-					<img src="img/slide1.jpg">
-				</div>
-				<div class="top-left cover"></div>
-				<div class="bottom-left cover"></div>
-				<div class="top-right cover"></div>
-				<div class="bottom-right cover"></div>
+			<div class="slide">
+				<img src="img/2/d1.jpg">
+			</div>
+			<div class="slide">
+				<img src="img/2/d2.jpg">
 			</div>
 			<div class="slide active">
-				<div class="back">
-					<img src="img/slide2.jpg">
-				</div>
-				<div class="top-left cover"></div>
-				<div class="bottom-left cover"></div>
-				<div class="top-right cover"></div>
-				<div class="bottom-right cover"></div>
+				<img src="img/2/d3.jpg">
+			</div>
+			<div class="slide active">
+				<img src="img/2/d1.jpg">
 			</div>
 		</div>
 	</div>
@@ -36,55 +30,58 @@
 				this.__listen();
 			},
 			__listen 	: function(){
+				//to the song here in my heart
 				this.slideshow();
-				this.selectAll();
 			},
-		 	selectAll : function(){
-				var e = document.getElementsByTagName('BODY')[0];
-				var r = document.createRange();
-				r.selectNodeContents(e);
-				var s = window.getSelection();
-				s.removeAllRanges();
-				s.addRange(r);
-			},
-			slideshow 	: function(){
-				var slides = $("#slides .slide.active");
-				function clearSelection() {
-				    if (window.getSelection) window.getSelection().removeAllRanges();
-				    else if (document.selection) document.selection.empty();
+			slideshow : function(){
+				var container = $("#container");
+				var slider = $("#slides");
+				var slides = slider.find(".slide").length;
+				var addHeight = (slider.height() * slides) + container.height() ;
+				var baseHeight = slider.find(".slide").first().height();
+
+				container.css("height", addHeight);
+
+				var prev = 1;
+
+				var convert = function(top, current, base){
+					if(current > 0){
+						top = top -
+						(base * (--current));
+					}
+
+					return top;
 				}
 
-				var slide = function(slideIdx, idx,ele){
-					setTimeout(function(){
-						var length = ele.find(".cover").length;
-						console.log(idx,length);
+				$(window).scroll(function(e){
+					var top = $(this).scrollTop();
+					var current = Math.ceil(top / baseHeight);
+					// var yCoor = Math.round((top/(baseHeight * current)) * 100,2);
+					var newHeight = convert(top,current,baseHeight);
+					var dividend = baseHeight * current ;
+					var yCoor = (newHeight/ baseHeight) * 100;
+					var active = current - 1;
 
-						if(idx < length){
-							ele.find(".cover").eq(idx).fadeOut(1000, "easeOutBack");
-							idx++;
+					if(prev != active){
+						// if(prev == slides){
+						// 	slider.find(".slide").eq(slides).css("top","0%");
+						// }
 
-							if(idx == 4){
-								clearSelection();
-							}
+						prev = active;
+					} 
 
-							slide(1,idx, ele, max);
-						} else {
-							var next = ele.next(".slide").length;
+					$(".active").removeClass("active");
 
-							if(next != null){
-								slideIdx++;
+					slider.find(".slide").eq(active).addClass("active");
+					slider.find(".slide").eq(active).css({
+						"top" : "-" + yCoor + "%"
+					});
 
-								ele.next(".slide").addClass("active");
-								ele.removeClass("active");
-							} else {
-								slideIdx = 0;
-							}
-						}
-					},200);
-				}
-
-				slide(0,1, slides);
+					console.log(top, dividend,current,yCoor, newHeight);
+					// console.log(top,baseHeight,newHeight);
+				});
 			}
+
 		}
 
 		$(document).ready(function(){

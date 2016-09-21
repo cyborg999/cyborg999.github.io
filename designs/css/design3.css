@@ -1,0 +1,143 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "f1";
+}
+
+@font-face {
+	font-family: "f1";
+	src: url(../fonts/lora-italic-webfont.woff2);
+}
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.hidden { display: none; }
+
+#container {
+	background-image:url(../img/design3_img/b5.jpg);
+	background-size: cover;
+	width: 100%;
+	height: 90vh;
+	text-align: center;
+	position: relative;
+	color: white;
+}
+#container h1 {
+	font-size: 60px;
+	margin: auto;
+	margin-top: 15%;
+	margin-bottom: 1%;
+	border-bottom: 3px solid white;
+	width: 70%;
+	text-shadow: 1px 1px 10px black;
+}
+#container h2 {
+	text-shadow: 1px 1px 10px black;
+	color: #F1F1F1;
+}
+#container figure .me {
+    border-radius: 50%;
+    width: 300px;
+    margin-top: 60px;
+}
+}
+#container .fb {
+	position: absolute;
+	top: 10px;
+	right: 10%;
+}
+#container .btn {
+	background: white;
+	padding: 10px 30px;
+	margin-top:10px; 
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+#container .btn.orange {
+	color: white;
+	background: red;
+}
+#container .lighten {
+	background: hsla(0,0%,100%,.3);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+}
+#container article {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#container nav {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	z-index: 2;
+}
+#container nav a {
+	color: white;
+	font-size: 19px;
+	text-decoration: none;	
+	margin: 0px 2px;
+}
+#container nav a.active {
+	background: red;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.fixed {
+	position: fixed!important;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,.5);
+	display: inline;
+	height: 50px;
+	padding-top: 20px;
+}
+
+.items {
+	top: 0px;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	margin: auto;
+}
+
+.items .item {
+	width: 50%;
+	height: 300px;
+	/*background: orange;*/
+	float: left;
+	overflow: hidden;
+	/*opacity: .9;*/
+}
+.items .item:hover img {
+	/*opacity: 1;*/
+	width: 100%;
+	transition: 2s all;
+
+}
+aside {
+	position: fixed;
+	left: 0px;
+	top: 40%;
+	text-align: center;
+	z-index: 999;
+}
+aside ul li {
+	background: #272626;
+	padding: 7px;
+}
+aside ul li a {
+	color: white;
+}
